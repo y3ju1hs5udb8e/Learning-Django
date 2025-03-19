@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Layout_Title
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- nav bar -->
+    <div class="nav-bar">
+        <div class="logo">
+            My Website
+        </div>
+        <div class="nav-lists">
+            <li class="nav-item">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'posts:list' %}">Posts</a>
+            </li>
+            <li class="nav-item">
+                <a href="">Users</a>
+            </li>
+            <li class="nav-item">
+                <a href="/admin">Login</a>
+            </li>
+
+            {% comment %} <div class="dark-toggle"></div> {% endcomment %}
+        </div>
+    </div>
+
+    <!-- body content -->
+    <div class="content">
+        {% block content %}
+            <h1>Hello World</h1>
+        {% endblock %}
+    </div>
+
+     <!-- footer -->
+    <div class="footer">
+        <div class="left">
+            <h1><a href="{% url 'home' %}">My Website</a></h1>
+                <p>Cpyright @ 2020-2025</p>
+        </div>
+
+        <div class="right">
+            <li>
+                <div class="url-img">FB</div>
+                <a href="">Facebook</a>
+            </li>
+            <li>
+                <div class="url-img">Git</div>
+                <a href="">Github</a>
+            </li>
+            <li>
+                <div class="url-img">I</div>
+                <a href="">Instagram</a>
+            </li>
+            <li>
+                <div class="url-img">Snap</div>
+                <a href="">Snapchat</a>
+            </li>
+        </div>
+        </div>
+</body>
+</html>

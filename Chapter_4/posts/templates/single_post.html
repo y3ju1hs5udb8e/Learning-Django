@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block content %}
+    <h1><a href="">{{ post.title }}</a></h1>
+    <h3 style="text-align: start;">by: {{ post.username }}</h3>
+    <h6 style="text-align: start;">on: {{ post.date }}</h6> <hr/>
+    <p style="margin-top: 5px;">{{ post.text }}</p>
+    <br>
+    <a href="{% url 'posts:list' %}" style="text-align: end;">Go back</a>
+{% endblock %}
